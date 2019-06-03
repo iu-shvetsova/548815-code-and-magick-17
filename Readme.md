@@ -1,7 +1,7 @@
 # Учебный проект «Код и Магия» [![Build status][travis-image]][travis-url]
 
 * Студент: [Юлия Швецова](https://up.htmlacademy.ru/javascript/17/user/548815).
-* Наставник: `Неизвестно`.
+* Наставник: [Мария Филиппова](https://up.htmlacademy.ru/javascript/17/user/136678).
 
 ---
 
