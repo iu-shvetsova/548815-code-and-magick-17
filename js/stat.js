@@ -25,6 +25,7 @@ var getMaxElement = function (elements) {
 
   return max;
 };
+'use strict';
 
 var getColumnHeight = function (maxTime, currentTime) {
   return COLUMN_MAX_HEIGHT * currentTime / maxTime;
@@ -62,15 +63,14 @@ window.renderStatistics = function (ctx, names, times) {
 
   var maxTime = getMaxElement(times);
 
-  for (var i = 0; i < names.length; i++) {
+  for (i = 0; i < names.length; i++) {
     ctx.fillStyle = '#000';
     ctx.fillText(names[i], CLOUD_X + COLUMN_GAP + (COLUMN_WIDTH + COLUMN_GAP) * i, CLOUD_HEIGHT - VERTICAL_GAP);
     columnHeight = Math.round(getColumnHeight(maxTime, times[i]));
     ctx.fillText(Math.round(times[i]), CLOUD_X + COLUMN_GAP + (COLUMN_WIDTH + COLUMN_GAP) * i, CLOUD_HEIGHT - VERTICAL_GAP - NAME_HEIGHT - columnHeight);
     if (i === 0) {
       columnColor = 'rgba(255, 0, 0, 1)';
-    }
-    else {
+    } else {
       columnColor = 'hsl(240, ' + Math.round(Math.random() * 100) + '%, 50%)';
     }
     ctx.fillStyle = columnColor;
