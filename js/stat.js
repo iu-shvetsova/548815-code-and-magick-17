@@ -1,3 +1,5 @@
+'use strict';
+
 var CLOUD_WIDTH = 420;
 var CLOUD_HEIGHT = 270;
 var CLOUD_X = 110;
@@ -25,7 +27,6 @@ var getMaxElement = function (elements) {
 
   return max;
 };
-'use strict';
 
 var getColumnHeight = function (maxTime, currentTime) {
   return COLUMN_MAX_HEIGHT * currentTime / maxTime;
