@@ -5,16 +5,16 @@ var CLOUD_Y = 10;
 var GAP = 10;
 var COLUMN_GAP = 50;
 var VERTICAL_GAP = 15;
-var COLUMN_HEIGHT = 150;
+var COLUMN_MAX_HEIGHT = 150;
 var COLUMN_WIDTH = 40;
 var NAME_HEIGHT = 25;
 
-var renderCloud = function(ctx, x, y, color) {
+var renderCloud = function (ctx, x, y, color) {
   ctx.fillStyle = color;
   ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
 };
 
-var getMaxElement = function(elements) {
+var getMaxElement = function (elements) {
   var max = 0;
 
   for (var i = 0; i < elements.length; i++) {
@@ -24,13 +24,13 @@ var getMaxElement = function(elements) {
   }
 
   return max;
-}
-
-var getColumnHeight = function(maxTime, currentTime) {
-  return 150 * currentTime / maxTime;
 };
 
-window.renderStatistics = function(ctx, names, times) {
+var getColumnHeight = function (maxTime, currentTime) {
+  return COLUMN_MAX_HEIGHT * currentTime / maxTime;
+};
+
+window.renderStatistics = function (ctx, names, times) {
   renderCloud(ctx, CLOUD_X + GAP, CLOUD_Y + GAP, 'rgba(0, 0, 0, 0.7)');
   renderCloud(ctx, CLOUD_X, CLOUD_Y, '#fff');
 
