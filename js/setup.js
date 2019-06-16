@@ -9,6 +9,7 @@ var playerWizard = setup.querySelector('.setup-player');
 var playerWizardCoatColor = playerWizard.querySelector('.wizard-coat');
 var playerWizardEyesColor = playerWizard.querySelector('.wizard-eyes');
 var playerFireballColor = playerWizard.querySelector('.setup-fireball-wrap');
+var inputFireballColor = playerFireballColor.querySelector('input[name=fireball-color]');
 
 var ESC_KEYCODE = 27;
 var ENTER_KEYCODE = 13;
@@ -86,7 +87,8 @@ playerWizardEyesColor.addEventListener('click', function () {
 });
 
 playerFireballColor.addEventListener('click', function () {
-  playerFireballColor.style.backgroundColor = getRandomElement(FIREBALL_COLORS);
+  inputFireballColor.value = getRandomElement(FIREBALL_COLORS);
+  playerFireballColor.style.backgroundColor = inputFireballColor.value;
 });
 
 var generateWizards = function () {
