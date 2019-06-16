@@ -63,32 +63,31 @@ setupClose.addEventListener('keydown', function (evt) {
   }
 });
 
-var getNextColor = function (currentColor, colors) {
-  for (var i = 0; i < colors.length - 1; i++) {
-    if (currentColor === colors[i]) {
-      return colors[i + 1];
-    }
-  }
+// var getNextColor = function (currentColor, colors) { вдруг она ещё пригодится :)
+//   for (var i = 0; i < colors.length - 1; i++) {
+//     if (currentColor === colors[i]) {
+//       return colors[i + 1];
+//     }
+//   }
 
-  return colors[0];
-};
-
-playerWizardCoatColor.addEventListener('click', function () {
-  playerWizardCoatColor.style.fill = getNextColor(playerWizardCoatColor.style.fill, COAT_COLORS);
-});
-
-playerWizardEyesColor.addEventListener('click', function () {
-  playerWizardEyesColor.style.fill = getNextColor(playerWizardEyesColor.style.fill, EYES_COLORS);
-});
-
-playerFireballColor.addEventListener('click', function () {
-  console.log(playerFireballColor.style.backgroundColor);
-  // playerFireballColor.style.backgroundColor = getNextColor(playerFireballColor.style.backgroundColor, FIREBALL_COLORS);
-});
+//   return colors[0];
+// };
 
 var getRandomElement = function (elements) {
   return elements[Math.floor(Math.random() * elements.length)];
 };
+
+playerWizardCoatColor.addEventListener('click', function () {
+  playerWizardCoatColor.style.fill = getRandomElement(COAT_COLORS);
+});
+
+playerWizardEyesColor.addEventListener('click', function () {
+  playerWizardEyesColor.style.fill = getRandomElement(EYES_COLORS);
+});
+
+playerFireballColor.addEventListener('click', function () {
+  playerFireballColor.style.backgroundColor = getRandomElement(FIREBALL_COLORS);
+});
 
 var generateWizards = function () {
   for (var i = 0; i < NUMBER_OF_WIZARDS; i++) {
