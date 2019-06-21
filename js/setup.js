@@ -7,7 +7,9 @@ var playerName = setup.querySelector('.setup-user-name');
 
 var playerWizard = setup.querySelector('.setup-player');
 var playerWizardCoatColor = playerWizard.querySelector('.wizard-coat');
+var inputCoatColor = playerWizard.querySelector('input[name=coat-color]');
 var playerWizardEyesColor = playerWizard.querySelector('.wizard-eyes');
+var inputEyesColor = playerWizard.querySelector('input[name=eyes-color]');
 var playerFireballColor = playerWizard.querySelector('.setup-fireball-wrap');
 var inputFireballColor = playerFireballColor.querySelector('input[name=fireball-color]');
 
@@ -79,11 +81,13 @@ var getRandomElement = function (elements) {
 };
 
 playerWizardCoatColor.addEventListener('click', function () {
-  playerWizardCoatColor.style.fill = getRandomElement(COAT_COLORS);
+  inputCoatColor.value = getRandomElement(COAT_COLORS);
+  playerWizardCoatColor.style.fill = inputCoatColor.value;
 });
 
 playerWizardEyesColor.addEventListener('click', function () {
-  playerWizardEyesColor.style.fill = getRandomElement(EYES_COLORS);
+  inputEyesColor.value = getRandomElement(EYES_COLORS);
+  playerWizardEyesColor.style.fill = inputEyesColor.value;
 });
 
 playerFireballColor.addEventListener('click', function () {
