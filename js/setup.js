@@ -1,8 +1,7 @@
 'use strict';
 
 var setup = document.querySelector('.setup');
-var setupOpen = document.querySelector('.setup-open');
-var setupClose = setup.querySelector('.setup-close');
+
 var playerName = setup.querySelector('.setup-user-name');
 
 var playerWizard = setup.querySelector('.setup-player');
@@ -27,44 +26,6 @@ var SURNAMES = ['да Марья', 'Верон', 'Мирабелла', 'Валь
 var COAT_COLORS = ['rgb(101, 137, 164)', 'rgb(241, 43, 107)', 'rgb(146, 100, 161)', 'rgb(56, 159, 117)', 'rgb(215, 210, 55)', 'rgb(0, 0, 0)'];
 var EYES_COLORS = ['black', 'red', 'blue', 'yellow', 'green'];
 var FIREBALL_COLORS = ['#ee4830', '#30a8ee', '#5ce6c0', '#e848d5', '#e6e848'];
-
-var onPopupEscPress = function (evt) {
-  if (!(playerName === document.activeElement) && (evt.keyCode === ESC_KEYCODE)) {
-    closePopup();
-  }
-};
-
-var openPopup = function () {
-  setup.classList.remove('hidden');
-  setup.querySelector('.setup-similar').classList.remove('hidden');
-
-  document.addEventListener('keydown', onPopupEscPress);
-};
-
-var closePopup = function () {
-  setup.classList.add('hidden');
-  document.removeEventListener('keydown', onPopupEscPress);
-};
-
-setupOpen.addEventListener('click', function () {
-  openPopup();
-});
-
-setupOpen.addEventListener('keydown', function (evt) {
-  if (evt.keyCode === ENTER_KEYCODE) {
-    openPopup();
-  }
-});
-
-setupClose.addEventListener('click', function () {
-  closePopup();
-});
-
-setupClose.addEventListener('keydown', function (evt) {
-  if (evt.keyCode === ENTER_KEYCODE) {
-    closePopup();
-  }
-});
 
 // var getNextColor = function (currentColor, colors) { вдруг она ещё пригодится :)
 //   for (var i = 0; i < colors.length - 1; i++) {
