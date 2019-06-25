@@ -12,9 +12,6 @@ var inputEyesColor = playerWizard.querySelector('input[name=eyes-color]');
 var playerFireballColor = playerWizard.querySelector('.setup-fireball-wrap');
 var inputFireballColor = playerFireballColor.querySelector('input[name=fireball-color]');
 
-var ESC_KEYCODE = 27;
-var ENTER_KEYCODE = 13;
-
 var similarListElement = document.querySelector('.setup-similar-list');
 var similarWizardTemplate = document.querySelector('#similar-wizard-template').content.querySelector('.setup-similar-item');
 
