@@ -2,8 +2,6 @@
 
 var setup = document.querySelector('.setup');
 
-var playerName = setup.querySelector('.setup-user-name');
-
 var playerWizard = setup.querySelector('.setup-player');
 var playerWizardCoatColor = playerWizard.querySelector('.wizard-coat');
 var inputCoatColor = playerWizard.querySelector('input[name=coat-color]');

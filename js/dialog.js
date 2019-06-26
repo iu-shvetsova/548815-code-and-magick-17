@@ -3,6 +3,8 @@
 var ESC_KEYCODE = 27;
 var ENTER_KEYCODE = 13;
 
+var setup = document.querySelector('.setup');
+var playerName = setup.querySelector('.setup-user-name');
 var dialogHandler = setup.querySelector('.upload');
 var dialogTop = setup.style.top;
 var dialogLeft = setup.style.left;
@@ -88,9 +90,9 @@ dialogHandler.addEventListener('mousedown', function (evt) {
     document.removeEventListener('mouseup', onMouseUp);
 
     if (isDialogMoved) {
-      var onClickPreventDefault = function (evt) {
-        evt.preventDefault();
-        dialogHandler.removeEventListener('click', onClickPreventDefault)
+      var onClickPreventDefault = function (clickEvt) {
+        clickEvt.preventDefault();
+        dialogHandler.removeEventListener('click', onClickPreventDefault);
       };
       dialogHandler.addEventListener('click', onClickPreventDefault);
     }
